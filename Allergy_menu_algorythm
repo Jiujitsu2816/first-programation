@@ -1,0 +1,50 @@
+# MIT License
+# 
+# Copyright (c) 2024 Jiujitsu2816
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# Function to eliminate dishes containing allergens from the menu
+def eliminate_allergies(allergies, Menu, allergy):
+    # Split the user's input into a list of allergy terms
+    allergy_list = allergy.split()
+    
+    # Loop through each allergy in the user's input
+    for allergies_index in allergy_list:
+        # Get the list of dishes associated with the current allergy
+        plate_list = allergies[allergies_index]
+
+        # Check if the list of dishes is not a single string
+        if type(plate_list) is not str:
+            # Iterate over each dish in the allergy list
+            for plates in plate_list:
+                # Iterate over the dishes in the menu
+                for menu_plates in Menu:
+                    # If the dish is in the menu, remove it
+                    if plates in menu_plates:
+                        Menu.remove(menu_plates)
+        else:
+            # Handle the case where the allergen maps to a single dish
+            for menu_plates in Menu:
+                # If the dish is in the menu, remove it
+                if plate_list in menu_plates:
+                    Menu.remove(menu_plates)
+    
+    # Return the updated menu
+    return Menu

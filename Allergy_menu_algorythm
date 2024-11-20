@@ -21,30 +21,13 @@
 # SOFTWARE.
 
 # Function to eliminate dishes containing allergens from the menu
-def eliminate_allergies(allergies, Menu, allergy):
-    # Split the user's input into a list of allergy terms
-    allergy_list = allergy.split()
-    
-    # Loop through each allergy in the user's input
-    for allergies_index in allergy_list:
-        # Get the list of dishes associated with the current allergy
-        plate_list = allergies[allergies_index]
-
-        # Check if the list of dishes is not a single string
-        if type(plate_list) is not str:
-            # Iterate over each dish in the allergy list
-            for plates in plate_list:
-                # Iterate over the dishes in the menu
-                for menu_plates in Menu:
-                    # If the dish is in the menu, remove it
-                    if plates in menu_plates:
-                        Menu.remove(menu_plates)
-        else:
-            # Handle the case where the allergen maps to a single dish
-            for menu_plates in Menu:
-                # If the dish is in the menu, remove it
-                if plate_list in menu_plates:
-                    Menu.remove(menu_plates)
-    
-    # Return the updated menu
-    return Menu
+# Split the user's input into a list of allergy terms
+# Loop through each allergy in the user's input
+# Get the list of dishes associated with the current allergy 
+# Check if the list of dishes is not a single string
+# Iterate over each dish in the allergy list
+# Iterate over the dishes in the menu
+# If the dish is in the menu, remove it
+# Handle the case where the allergen maps to a single dish
+# If the dish is in the menu, remove it
+# Return the updated menu
